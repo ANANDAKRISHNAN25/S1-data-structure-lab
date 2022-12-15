@@ -62,7 +62,7 @@ if(F==-1)
 {
 printf("Queue is empty");
 }
-else if(F==0&&R==0)
+else if(F == R)
 {
 printf("deleted elements %d",A[F]);
 F=R=-1;
