@@ -13,7 +13,7 @@ void insert();
 void inorder(struct node*ptr);
 void preorder(struct node*ptr);
 void postorder(struct node*ptr);
-///void search(struct node*ptr);
+void search(struct node*ptr);
 
 void main() {
 	int opt;
@@ -30,8 +30,8 @@ void main() {
 				break;
 			case 4: postorder(root);
 				break;
-                        ///case 5: search(root);
-                                ///break;
+                        case 5: search(root);
+                                break;
 			case 0:
 			default:break;
 		}
@@ -126,6 +126,29 @@ printf(" %d ",ptr->data);
 }
 
 }
+void search(struct node *ptr){
+	int data,flag=0;
+	if(ptr == NULL)
+		printf("Empty tree");
+	else {
+		printf("Enter the element to find : ");
+		scanf("%d",&data);
+		while(ptr!=NULL){
+			if(data == ptr->data){
+				printf("Element found");
+				ptr=NULL;
+				flag=1;
+			}
+			else if(data > ptr->data)
+				ptr=ptr->right;
+			else
+				ptr=ptr->left;
+		}
+		if(flag==0)
+			printf("Element not found");
+			
+	}
+}	
 
 
 
