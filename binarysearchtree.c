@@ -13,12 +13,13 @@ void insert();
 void inorder(struct node*ptr);
 void preorder(struct node*ptr);
 void postorder(struct node*ptr);
+///void search(struct node*ptr);
 
 void main() {
 	int opt;
 	do {
 		printf("\nChoose the operation number : \n");
-		printf("1.Insert \n2.inorder-display \n3.preorder-display \n4.postorder-display \n0.Exit : ");
+		printf("\n1.Insert \n2.inorder-display \n3.preorder-display \n4.postorder-display \n5.Search  \n0.Exit : ");
 		scanf("%d",&opt);
 		switch(opt) {
 			case 1: insert();
@@ -29,6 +30,8 @@ void main() {
 				break;
 			case 4: postorder(root);
 				break;
+                        ///case 5: search(root);
+                                ///break;
 			case 0:
 			default:break;
 		}
@@ -56,10 +59,11 @@ else
 ptr = root;
 
 while (ptr!=NULL){
-if (x==ptr->data)
+if (x==ptr->data){
 
 printf("Item present in the tree ");
-
+ptr=NULL;
+}
 else if (x > ptr->data)
 {
 ptr1 = ptr;
@@ -89,7 +93,7 @@ if(ptr!=NULL){
 		
 inorder(ptr->left);
 		
-printf("%d ",ptr->data);
+printf(" %d ",ptr->data);
 inorder(ptr->right);
 	
 }
@@ -100,7 +104,7 @@ void preorder(struct node *ptr)
 	
 if(ptr!=NULL){
 		
-printf("%d ",ptr->data);
+printf(" %d ",ptr->data);
 		
 preorder(ptr->left);
 		
@@ -117,12 +121,11 @@ postorder(ptr->left);
 		
 postorder(ptr->right);
 		
-printf("%d ",ptr->data);
+printf(" %d ",ptr->data);
 	
 }
 
 }
-
 
 
 
