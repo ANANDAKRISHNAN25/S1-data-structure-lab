@@ -82,10 +82,6 @@ ptr1->left = new;
 }	
 }
 
-
-
-
-
 void inorder(struct node *ptr)
 {
 	
